@@ -1,0 +1,13 @@
+<div class="main-content">
+	<div class="container">
+		<div class="row">
+	    	<div class="well col-md-4 col-md-offset-3">
+					<div class="text-center"><h5><strong>CONNEXION</strong></h5></div>
+					<input class="form-control" placeholder="Adresse mail" [(ngModel)]="user.username">
+					<input class="form-control" type="Mot de passe" placeholder="password" [(ngModel)]="user.password">
+					<br>
+					<button class="btn-success btn pull-right" (click)="login(user)">Se connecter</button>
+			</div>
+		</div>
+	</div>
+</div>
