@@ -1,0 +1,13 @@
+<h5>Editer un dossier !!! </h5>
+
+<div *ngIf="dossier">
+  <p>{{dossier.name}}</p>
+
+  <label>Nom: </label>
+  <input  [(ngModel)]="dossier.name" />
+
+  <label> Description: </label>
+  <input  [(ngModel)]="dossier.description" />
+
+  <button (click)="save()">Sauvegarder</button>
+</div>

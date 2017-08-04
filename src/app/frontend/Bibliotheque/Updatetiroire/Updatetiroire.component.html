@@ -1,0 +1,44 @@
+<h5>Editer un tiroire !!! </h5>
+
+<div *ngIf="tiroire">
+  <p>{{tiroire.name}}</p>
+
+
+
+  <label>Nom: </label>
+  <input  [(ngModel)]="tiroire.name"  />
+
+
+
+  <label> Description: </label>
+    <input  [(ngModel)]="tiroire.description"  />
+
+
+
+    <button (click)="save()">Sauvegarder</button>
+</div>
+
+
+<!-- <div class="container">
+  <h1>Formulaire client</h1>
+  <form (ngSubmit)="onSubmit()">
+
+  <div class="form-group">
+    <label for="name">Nom</label>
+    <input id="name" type="text" class="form-control" required
+      [(ngModel)]="tiroire.name"
+      #name="ngForm">
+    <span [hidden]="name.valid" class="text-danger">Vous devez entrer un nom !</span>
+  </div>
+
+  <div class="form-group">
+    <label for="description">Description: </label>
+    <input id="description" type="text" class="form-control" required
+      [(ngModel)]="tiroire.description"
+      #description="ngForm">
+    <span [hidden]="name.valid" class="text-danger">Vous devez entrer un nom !</span>
+  </div>
+
+    <button (click)="save()">Sauvegarder</button>
+ </div>
+  -->

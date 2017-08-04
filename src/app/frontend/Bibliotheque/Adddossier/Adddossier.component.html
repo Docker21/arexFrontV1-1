@@ -1,0 +1,33 @@
+<p> Formulaire d'un dossier</p>
+
+<form [formGroup]="addDossierForm" (ngSubmit)=Adddossier($event) novalidate>
+
+
+  <div class="form-group">
+  <label class="center-block">Nom:
+    <input class="form-control" formControlName="name">
+  </label>
+</div>
+
+
+
+
+
+<div class="form-group">
+  <label class="center-block">Description:
+    <input class="form-control" formControlName="description">
+  </label>
+</div>
+
+
+
+
+
+<div style="margin-bottom: 1em">
+<button type="submit"
+        [disabled]="addDossierForm.pristine" class="btn btn-success" >Enregistrer Description.</button>
+
+</div>
+
+
+</form>

@@ -1,0 +1,67 @@
+
+  <p> La liste des tiroires </p>
+
+<table class="striped highlight centered responsive-table z-depth-2" style="font-size: 20px;">
+  <thead>
+    <tr>
+        <th data-field="id">ID du tiroire</th>
+         <th data-field="Description">Description</th>
+         <th data-field="name">Nom</th>
+
+
+
+        <th >Edit</th>
+        <th >Delete</th>
+    </tr>
+</thead>
+
+<tbody>
+  <tr *ngFor="let tiroire of values " [class.selected]="tiroire === selectedtiroire">
+
+
+      <td>{{tiroire.id}}</td>
+      <td>{{tiroire.description}}</td>
+      <td>{{tiroire.name}}</td>
+
+<button (click)="gotoDetail(tiroire)" class="pull-right fl-ri btn btn-success">Modifier </button>
+<button type="button" class="btn btn-pad btn-success pull-right" data-toggle="modal" data-target="#myModal"  (click)="onClickLi(tiroire)"> Supprimer ce tiroire</button>
+
+
+<!--  ************************************************************ Afficher les Dossier d'un tiroir************************************************************************************************  -->
+<button class="btn-secondary btn pull-right" (click)="focntionD(tiroire)">Afficher les Dossier d'un tiroir.</button>
+<button class="btn-secondary btn pull-right" (click)="focntionb1(tiroire)">Ajouter un dossier.</button>
+
+
+
+  </tr>
+  </tbody>
+</table>
+
+
+
+
+<!--    ************************************** Modal pour supprimer une tiroire        *********************************************** *** ****** -->
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+          <h4 class="modal-title">Suppression du tiroire  </h4>
+        </div>
+        <div class="modal-body">
+          <p>Vous voulez supprimer un tiroire ?</p>
+        </div>
+        <div class="modal-footer">
+
+<button (click)="delete(selectedtiroire)" class="pull-right fl-ri btn btn-success">supprimer!!!</button>
+
+<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+<!--  ************************************************************ Bouton dajouter une nouvelle tiroire ************************************************************************************************  -->
+<button class="btn-secondary btn pull-right" (click)="focntionb()">Ajouter un tiroire.</button>

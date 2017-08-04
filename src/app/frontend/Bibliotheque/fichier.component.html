@@ -1,0 +1,64 @@
+
+  <p> La liste des fichiers </p>
+
+<table class="striped highlight centered responsive-table z-depth-2" style="font-size: 20px;">
+  <thead>
+    <tr>
+        <th data-field="id">ID du fichier</th>
+         <th data-field="Description">Description</th>
+         <th data-field="name">Nom</th>
+
+
+
+        <th >Edit</th>
+        <th >Delete</th>
+    </tr>
+</thead>
+
+<tbody>
+  <tr *ngFor="let fichier of values " [class.selected]="fichier === selectedfichier">
+
+
+      <td>{{fichier.id}}</td>
+      <td>{{fichier.description}}</td>
+      <td>{{fichier.name}}</td>
+
+<button (click)="gotoDetail(fichier)" class="pull-right fl-ri btn btn-success">Modifier </button>
+<button type="button" class="btn btn-pad btn-success pull-right" data-toggle="modal" data-target="#myModal"  (click)="onClickLi(fichier)"> Supprimer ce fichier</button>
+
+
+<!--  ************************************************************ Bouton d'afficher un dossier************************************************************************************************  -->
+<!-- <button class="btn-secondary btn pull-right" (click)="focntionD()">Afficher Dossier.</button> -->
+
+
+
+
+  </tr>
+  </tbody>
+</table>
+
+
+
+
+<!--    ************************************** Modal pour supprimer une dossier        *********************************************** *** ****** -->
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+          <h4 class="modal-title">Suppression du fichier  </h4>
+        </div>
+        <div class="modal-body">
+          <p>Vous voulez supprimer un fichier ?</p>
+        </div>
+        <div class="modal-footer">
+
+<button (click)="delete(selectedfichier)" class="pull-right fl-ri btn btn-success">supprimer!!!</button>
+
+<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
